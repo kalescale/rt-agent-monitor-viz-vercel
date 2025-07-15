@@ -1,8 +1,5 @@
 import base64
-import io
 import json
-from datetime import datetime
-import re
 
 import dash
 from dash import dcc, html
@@ -248,8 +245,8 @@ def create_chat_interface(conversation):
             content_div = create_tool_cards(content)
         elif role == 'assistant':
             content = content.replace('<model_thinking>', '').replace('</model_thinking>', '')
-            if content.endswith(tool_calls[0]):
-                content = content[:-len(tool_calls[0])]
+            if content.endswith(tool_calls):
+                content = content[:-len(tool_calls)]
             content = content.strip()
             content_div = html.Div(content, style=styles['message_content'])
         else:
