@@ -178,19 +178,22 @@ def create_tool_cards(raw_text):
     Displays the raw tool output text in a preformatted block,
     preserving newlines and whitespace.
     """
-    # Style for the raw text block, similar to assistant's tool_code_block
+    # Style for the raw text block, smaller and more condensed with scrolling
     pre_style = {
         'backgroundColor': modern_theme['background'],
-        'color': modern_theme['text'],  # Use standard text color for output
-        'padding': '12px',
-        'borderRadius': '8px',
+        'color': modern_theme['text'],
+        'padding': '8px',  # Reduced padding
+        'borderRadius': '6px',  # Smaller border radius
         'border': f'1px solid {modern_theme["border"]}',
         'fontFamily': 'monospace',
-        'fontSize': '14px',
+        'fontSize': '12px',  # Smaller font size
+        'lineHeight': '1.2',  # Reduced line height for condensed spacing
         'overflowX': 'auto',
+        'overflowY': 'auto',  # Enable vertical scrolling
+        'maxHeight': '240px',  # Roughly 20 lines (12px * 1.2 * 20 ≈ 288px, reduced for padding)
         'whiteSpace': 'pre-wrap',
         'wordWrap': 'break-word',
-        'margin': 0  # Ensure it fits nicely in the container
+        'margin': 0
     }
     # Use html.Pre to display the raw text with formatting preserved
     return html.Pre(raw_text.strip(), style=pre_style)
@@ -264,13 +267,16 @@ def create_chat_interface(conversation):
             tool_code_block = html.Pre(tool_calls, style={
                 'backgroundColor': modern_theme['background'],
                 'color': modern_theme['accent'],
-                'padding': '12px',
-                'borderRadius': '8px',
+                'padding': '8px',  # Reduced padding
+                'borderRadius': '6px',  # Smaller border radius
                 'border': f'1px solid {modern_theme["border"]}',
                 'fontFamily': 'monospace',
-                'fontSize': '14px',
+                'fontSize': '12px',  # Smaller font size
+                'lineHeight': '1.2',  # Reduced line height for condensed spacing
                 'overflowX': 'auto',
-                'margin': '12px 0 0 0',
+                'overflowY': 'auto',  # Enable vertical scrolling
+                'maxHeight': '240px',  # Roughly 20 lines, same as tool output
+                'margin': '8px 0 0 0',  # Reduced margin
                 'whiteSpace': 'pre-wrap',
                 'wordWrap': 'break-word'
             })
