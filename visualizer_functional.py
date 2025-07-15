@@ -78,7 +78,7 @@ styles = {
         'border': f'1px solid {modern_theme["border"]}'
     },
     'message': {
-        'marginBottom': '20px',
+        'marginBottom': '40px',  # Increased from 20px to add extra space between steps
         'padding': '16px 20px',
         'borderRadius': '12px',
         'maxWidth': '85%',
