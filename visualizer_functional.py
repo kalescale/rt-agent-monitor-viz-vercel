@@ -248,6 +248,9 @@ def create_chat_interface(conversation):
             content_div = create_tool_cards(content)
         elif role == 'assistant':
             content = content.replace('<model_thinking>', '').replace('</model_thinking>', '')
+            if content.endswith(tool_calls[0]):
+                content = content[:-len(tool_calls[0])]
+            content = content.strip()
             content_div = html.Div(content, style=styles['message_content'])
         else:
             # Default for user messages
