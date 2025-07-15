@@ -190,7 +190,7 @@ def create_tool_cards(raw_text):
         'lineHeight': '1.2',  # Reduced line height for condensed spacing
         'overflowX': 'auto',
         'overflowY': 'auto',  # Enable vertical scrolling
-        'maxHeight': '240px',  # Roughly 20 lines (12px * 1.2 * 20 ≈ 288px, reduced for padding)
+        'maxHeight': '480px',  # Roughly 40 lines (12px * 1.2 * 40 = 576px, reduced for compactness)
         'whiteSpace': 'pre-wrap',
         'wordWrap': 'break-word',
         'margin': 0
@@ -275,7 +275,7 @@ def create_chat_interface(conversation):
                 'lineHeight': '1.2',  # Reduced line height for condensed spacing
                 'overflowX': 'auto',
                 'overflowY': 'auto',  # Enable vertical scrolling
-                'maxHeight': '240px',  # Roughly 20 lines, same as tool output
+                'maxHeight': '480px',  # Roughly 40 lines, same as tool output
                 'margin': '8px 0 0 0',  # Reduced margin
                 'whiteSpace': 'pre-wrap',
                 'wordWrap': 'break-word'
