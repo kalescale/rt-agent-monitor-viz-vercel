@@ -247,6 +247,7 @@ def create_chat_interface(conversation):
             # Use the new raw text rendering function for tool outputs
             content_div = create_tool_cards(content)
         elif role == 'assistant':
+            content = content.replace('<model_thinking>', '').replace('</model_thinking>', '')
             content_div = html.Div(content, style=styles['message_content'])
         else:
             # Default for user messages
