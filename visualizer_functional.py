@@ -247,14 +247,7 @@ def create_chat_interface(conversation):
             # Use the new raw text rendering function for tool outputs
             content_div = create_tool_cards(content)
         elif role == 'assistant':
-            # For assistant messages, only show content within model_thinking tags
-            thinking_match = re.search(r'<model_thinking>(.*?)</model_thinking>', content, re.DOTALL)
-            if thinking_match:
-                thinking_content = thinking_match.group(1).strip()
-                content_div = html.Div(thinking_content, style=styles['message_content'])
-            else:
-                # If no model_thinking tags found, show the full content
-                content_div = html.Div(content, style=styles['message_content'])
+            content_div = html.Div(content, style=styles['message_content'])
         else:
             # Default for user messages
             content_div = html.Div(content, style=styles['message_content'])
