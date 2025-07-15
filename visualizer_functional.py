@@ -289,6 +289,9 @@ def create_chat_interface(conversation):
 app = dash.Dash(__name__)
 app.title = "RT Monitor - Conversation Analysis"
 
+# Expose the Flask server for Vercel
+server = app.server
+
 # --- App Layout ---
 app.layout = html.Div(style=styles['body'], children=[
     html.Div(style=styles['container'], children=[
