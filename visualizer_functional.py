@@ -35,13 +35,12 @@ styles = {
     'container': {
         'maxWidth': '1400px',
         'margin': 'auto',
-        'padding': '0'  # Removed 20px padding to eliminate white trim around edges
+        'padding': '20px'
     },
     'header': {
         'textAlign': 'center',
         'marginBottom': '40px',
-        'margin': '0 20px 40px 20px',  # Added horizontal margins
-        'padding': '30px 20px',  # Added horizontal padding to prevent edge sticking
+        'padding': '30px 0',
         'background': f'linear-gradient(135deg, {modern_theme["surface"]}, {modern_theme["background"]})',
         'borderRadius': '16px',
         'boxShadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
@@ -53,7 +52,7 @@ styles = {
         'borderStyle': 'dashed',
         'borderRadius': '12px',
         'textAlign': 'center',
-        'margin': '0 20px 30px 20px',  # Added horizontal margins
+        'marginBottom': '30px',
         'cursor': 'pointer',
         'borderColor': modern_theme['primary'],
         'backgroundColor': modern_theme['surface'],
@@ -74,7 +73,7 @@ styles = {
         'backgroundColor': modern_theme['surface'],
         'borderRadius': '16px',
         'padding': '24px',
-        'margin': '20px 20px 0 20px',  # Added horizontal margins and top margin
+        'marginTop': '20px',
         'boxShadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
         'border': f'1px solid {modern_theme["border"]}'
     },
