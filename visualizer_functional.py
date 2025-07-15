@@ -3,7 +3,6 @@ import io
 import json
 from datetime import datetime
 import re
-import csv
 
 import dash
 from dash import dcc, html
